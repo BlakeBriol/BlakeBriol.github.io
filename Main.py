@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
 import csv
-import os
 
 app = Flask(__name__)
 
@@ -35,7 +34,7 @@ def contact():
                 writer.writerow([name, email, message])
 
             # Redirect to thank you page
-            return redirect('thank_you.html)
+            return render_template('thank_you.html')
         else:
             return "All fields are required.", 400
 
