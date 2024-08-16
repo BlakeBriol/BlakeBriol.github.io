@@ -1,3 +1,51 @@
+<?php
+// Define variables and initialize with empty values
+$name = $email = $message = "";
+$name_err = $email_err = $message_err = "";
+
+// Processing form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate name
+    if (empty(trim($_POST["name"]))) {
+        $name_err = "Please enter your name.";
+    } else {
+        $name = trim($_POST["name"]);
+    }
+
+    // Validate email
+    if (empty(trim($_POST["email"]))) {
+        $email_err = "Please enter your email.";
+    } elseif (!filter_var(trim($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
+        $email_err = "Invalid email format.";
+    } else {
+        $email = trim($_POST["email"]);
+    }
+
+    // Validate message
+    if (empty(trim($_POST["message"]))) {
+        $message_err = "Please enter a message.";
+    } else {
+        $message = trim($_POST["message"]);
+    }
+
+    // Check input errors before inserting in CSV
+    if (empty($name_err) && empty($email_err) && empty($message_err)) {
+        // Open or create CSV file
+        $file = fopen('contact_data.csv', 'a');
+
+        // Write data to CSV file
+        fputcsv($file, [$name, $email, $message]);
+
+        // Close the file
+        fclose($file);
+
+        // Redirect to thank you page
+        header('Location: thank_you.html');
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,6 +184,11 @@
             margin-bottom: 0.5em;
             color: #e0e0e0;
         }
+
+        .error-message {
+            color: #ff4d4d;
+            margin-bottom: 1em;
+        }
     </style>
 </head>
 <body>
@@ -155,15 +208,26 @@
             <h2>Contact Me</h2>
             <p>If you would like to get in touch, please use the form below.</p>
             <div class="contact-form">
-                <form action="contact_process.php" method="post">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <?php 
+                    if (!empty($name_err)) {
+                        echo "<p class='error-message'>$name_err</p>";
+                    }
+                    if (!empty($email_err)) {
+                        echo "<p class='error-message'>$email_err</p>";
+                    }
+                    if (!empty($message_err)) {
+                        echo "<p class='error-message'>$message_err</p>";
+                    }
+                    ?>
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>" required>
                     
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>" required>
                     
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <textarea id="message" name="message" rows="4" required><?php echo htmlspecialchars($message); ?></textarea>
                     
                     <input type="submit" value="Send Message">
                 </form>
