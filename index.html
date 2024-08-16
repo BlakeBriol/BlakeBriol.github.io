@@ -25,7 +25,7 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #000, #fff);
+            background: linear-gradient(to top right, #111, #333);
             z-index: -1; /* Place it behind all content */
             pointer-events: none; /* Ensure it doesn’t interfere with interactions */
         }
@@ -42,12 +42,14 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: relative;
-            overflow: hidden; /* Ensure gradient doesn’t overlap the header */
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
 
         header .name {
             font-weight: 700;
+            font-size: 2em; /* Larger font size for the name */
+            margin-left: 1em;
         }
 
         nav {
@@ -77,6 +79,7 @@
             background-color: #1c1c1c;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Include padding in width */
         }
 
         footer {
@@ -96,7 +99,7 @@
 
         .hero {
             text-align: center;
-            margin-bottom: 2em;
+            margin-bottom: 3em; /* Increase margin-bottom */
             padding: 2em;
             background: #333;
             border-radius: 12px;
@@ -117,7 +120,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1.5em;
-            margin-top: 2em;
+            margin-top: 3em; /* Increase margin-top */
         }
 
         .feature-card {
