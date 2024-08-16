@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
     
-    // Validate data (basic validation for demonstration purposes)
+    // Validate data
     if (!empty($name) && !empty($email) && !empty($message)) {
         // Open or create CSV file
         $file = fopen('contact_data.csv', 'a');
@@ -16,16 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Close the file
         fclose($file);
         
-        // Redirect to a thank you page or display a success message
-        header('Location: thank_you.html'); // or use echo "Thank you for your message!";
+        // Redirect to a thank you page
+        header('Location: thank_you.html');
         exit();
     } else {
-        // Handle the error (redirect or display an error message)
         echo "All fields are required.";
     }
 } else {
-    // Handle invalid request
     echo "Invalid request.";
 }
 ?>
-
