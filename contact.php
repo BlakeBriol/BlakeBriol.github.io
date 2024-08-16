@@ -1,5 +1,5 @@
 <?php
-// Define variables and initialize with empty values
+// Initialize variables
 $name = $email = $message = "";
 $name_err = $email_err = $message_err = "";
 
@@ -39,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Close the file
         fclose($file);
 
-        // Redirect to thank you page
-        header('Location: thank_you.html');
+        // Redirect to thank you page or stay on the same page
+        header('Location: thank_you.html'); // Ensure this page exists
         exit();
     }
 }
@@ -208,18 +208,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Contact Me</h2>
             <p>If you would like to get in touch, please use the form below.</p>
             <div class="contact-form">
+                <?php if (!empty($name_err) || !empty($email_err) || !empty($message_err)): ?>
+                    <div class="error-message">
+                        <?php
+                        echo $name_err ? "<p>$name_err</p>" : "";
+                        echo $email_err ? "<p>$email_err</p>" : "";
+                        echo $message_err ? "<p>$message_err</p>" : "";
+                        ?>
+                    </div>
+                <?php endif; ?>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                    <?php 
-                    if (!empty($name_err)) {
-                        echo "<p class='error-message'>$name_err</p>";
-                    }
-                    if (!empty($email_err)) {
-                        echo "<p class='error-message'>$email_err</p>";
-                    }
-                    if (!empty($message_err)) {
-                        echo "<p class='error-message'>$message_err</p>";
-                    }
-                    ?>
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name); ?>" required>
                     
