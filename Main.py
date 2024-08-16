@@ -35,7 +35,7 @@ def contact():
                 writer.writerow([name, email, message])
 
             # Redirect to thank you page
-            return redirect(url_for('thank_you'))
+            return redirect('thank_you.html)
         else:
             return "All fields are required.", 400
 
