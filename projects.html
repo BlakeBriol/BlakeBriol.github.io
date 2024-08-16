@@ -117,6 +117,11 @@
         .project-card a:hover {
             text-decoration: underline;
         }
+
+        /* Specific rule for links inside project-card */
+        .project-card a.website-link {
+            color: #f0f0f0; /* Ensure this link is white */
+        }
     </style>
 </head>
 <body>
@@ -140,21 +145,22 @@
                 <p>This project was created so that I could more easily input work-hours, track trends, and manage a large data set of entries. This has 9 features including:</p>
                 <ul>
                     <li>Data Input (Job, Date, Clock-in, Clock-out, and Wage)</li>
-                    <li>Dataframe Print<li>
-                    <li>Enty Deletion</li>
-                    <li>Database Clearing<li>
+                    <li>Dataframe Print</li>
+                    <li>Entry Deletion</li>
+                    <li>Database Clearing</li>
                     <li>Total Revenue</li>
                     <li>Taxed Revenue</li>
                     <li>Graph Trends</li>
                     <li>Give Statistics</li>
-                    <li>Database Backup(Automatic with Data Input)</li>
-                    
+                    <li>Database Backup (Automatic with Data Input)</li>
                 </ul>
                 <p>I am currently working towards this project being a fully isolated program.</p>
             </div>
             <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description and details of project 2.</p>
+                <h3><a href="https://BlakeBriol.com" target="_blank" class="website-link">This Website!</a></h3>
+                <p>This website uses a combination of platforms to work effectively and easily. The domain works through 
+                SquareSpace Domains, the SSL certification from Cloudflare, the program functioning through Flask, and the website
+                itself being hosted on GitHub.</p>
             </div>
             <div class="project-card">
                 <h3>Project 3</h3>
