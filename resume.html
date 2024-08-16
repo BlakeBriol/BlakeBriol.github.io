@@ -12,10 +12,8 @@
             background-color: #121212;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
+            overflow-x: hidden;
         }
-
-        /* Gradient Background */
         body::before {
             content: "";
             position: fixed;
@@ -24,10 +22,9 @@
             width: 100vw;
             height: 100vh;
             background: linear-gradient(to top right, #111, #333);
-            z-index: -1; /* Place it behind all content */
-            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+            z-index: -1;
+            pointer-events: none;
         }
-
         header {
             background-color: #1e1e1e;
             color: #f0f0f0;
@@ -41,19 +38,17 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            box-sizing: border-box; /* Ensure padding is included in width */
+            box-sizing: border-box;
         }
-
         header h1 {
             margin: 0;
-            font-size: 2em; /* Larger font size for header */
+            font-size: 2em;
+            font-weight: 700;
         }
-
         nav {
             margin: 0;
             padding: 0;
         }
-
         nav a {
             color: #f0f0f0;
             text-decoration: none;
@@ -63,12 +58,10 @@
             border-bottom: 2px solid transparent;
             padding-bottom: 5px;
         }
-
         nav a:hover {
             color: #e0e0e0;
             border-bottom: 2px solid #e0e0e0;
         }
-
         .container {
             width: 80%;
             margin: 2em auto;
@@ -76,9 +69,8 @@
             background-color: #1c1c1c;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            box-sizing: border-box; /* Include padding in width */
+            box-sizing: border-box;
         }
-
         footer {
             background-color: #1e1e1e;
             color: #f0f0f0;
@@ -88,55 +80,96 @@
             width: 100%;
             box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
-
         h1, h2, h3 {
             color: #e0e0e0;
             margin: 0 0 1em;
         }
-
         .resume-section {
             margin-bottom: 2em;
         }
-
         .resume-item {
             background: #2c2c2c;
-            border-radius: 12px; /* Match the feature cards */
-            padding: 2em; /* Increased padding for consistency */
-            margin-bottom: 2em; /* Increased margin for vertical spacing */
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 1.5em;
+            margin-bottom: 1.5em;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: box-shadow 0.3s, transform 0.3s;
+            position: relative;
         }
-
+        .resume-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #8ab4f8;
+            border-radius: 12px 0 0 12px;
+        }
         .resume-item:hover {
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transform: translateY(-5px);
         }
-
         .resume-item h4 {
             margin: 0 0 0.5em;
+            color: #e0e0e0;
+            font-weight: 700;
         }
-
-        .resume-item p {
+        .resume-item p, .resume-item ul {
             color: #d0d0d0;
+            line-height: 1.6;
         }
-
         ul {
             padding-left: 1.5em;
+            margin: 0;
         }
-
         li {
             margin-bottom: 0.5em;
+        }
+        .resume-item a {
+            color: #8ab4f8;
+            text-decoration: none;
+        }
+        .resume-item a:hover {
+            text-decoration: underline;
+        }
+        .interests {
+            background: #2c2c2c;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 1.5em;
+            margin-top: 2em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .interests h4 {
+            color: #e0e0e0;
+            margin: 0 0 0.5em;
+        }
+        .interests ul {
+            padding-left: 1.5em;
+        }
+        .interests li {
+            color: #d0d0d0;
+            margin-bottom: 0.5em;
+        }
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Resume</h1>
+        <h1>Blake Briol</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>   
+            <a href="contact.html">Contact</a>
             <a href="test.html">Test</a>
         </nav>
     </header>
@@ -144,36 +177,142 @@
     <div class="container">
         <section id="resume">
             <h2>Resume</h2>
-            <p>Here is a summary of my professional background and experience.</p>
+            <p class="contact-info">
+                <span>612.799.0032</span> - <a href="mailto:BlakeBriol@gmail.com">BlakeBriol@gmail.com</a> - <a href="https://linkedin.com/in/Blake-Briol" target="_blank">linkedin.com/in/Blake-Briol</a>
+            </p>
+
             <div class="resume-section">
-                <h3>Experience</h3>
+                <h3>Summary</h3>
                 <div class="resume-item">
-                    <h4>Job Title 1</h4>
-                    <p>Description of job 1.</p>
-                </div>
-                <div class="resume-item">
-                    <h4>Job Title 2</h4>
-                    <p>Description of job 2.</p>
+                    <p>Beginning my academic career in classical music, transferring to philosophy, and then joining with mathematics, coupled with numerous hobbies and interests, I find my greatest skills to be my adaptability in unique and challenging environments, my ability to excel and lead in said environments, and my organizational skills to ensure the aforementioned.</p>
                 </div>
             </div>
+
             <div class="resume-section">
                 <h3>Education</h3>
                 <div class="resume-item">
-                    <h4>Degree</h4>
-                    <p>Description of education.</p>
+                    <h4>University of Minnesota Twin Cities</h4>
+                    <p><strong>Major:</strong> Philosophy (Sept. 2022 - Present)<br>
+                    <strong>Minor:</strong> Mathematics<br>
+                    Bachelor of Arts - Anticipated Graduation Date: Spring 2026<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>GPA: 3.742 on a 4.0 Scale, Honors Program, Dean's List: Fall 2022, Spring 2023, Spring 2024</li>
+                        <li>Relevant Coursework: Human Physiology and Medical Devices (BIOL 1015), Honors Calculus III (MATH 2673H), Mathematical Logic I (MATH 5165), Principles of Microeconomics (APEC 1101), Starting a Startup (HSEM 3809H)</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Manhattan School of Music</h4>
+                    <p><strong>Field of Study:</strong> Classical Voice - Baritone (Aug. 2021 - May 2022)<br>
+                    Manhattan, NY</p>
+                    <ul>
+                        <li>GPA: 3.84 on a 4.0 Scale</li>
+                        <li>Relevant Coursework: English Diction, Italian Diction, Music Theory, Voice Lessons</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Publications</h4>
+                    <ul>
+                        <li>Briol, Blake. "The Axiom of Constructability." Epistemai Volume VII 2024. Retrieved from the University Digital Conservancy, <a href="https://hdl.handle.net/11299/263937" target="_blank">hdl.handle.net/11299/263937</a></li>
+                    </ul>
                 </div>
             </div>
+
             <div class="resume-section">
-                <h3>Skills</h3>
-                <ul>
-                    <li>Skill 1</li>
-                    <li>Skill 2</li>
-                    <li>Skill 3</li>
-                </ul>
+                <h3>Leadership and Extracurricular</h3>
+                <div class="resume-item">
+                    <h4>Job Shadow, Coyote Logistics</h4>
+                    <p>March 2023<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Observed key insights into logistical management via Excel and supply chain communication</li>
+                        <li>Learned techniques for building strong client relationships via consistent communication and verified assurance of product quality</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Philosophy Club, University of Minnesota, Twin Cities</h4>
+                    <p>Jan. 2022 – Present<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Vice President (2022-2023), Secretary (2022-2023)</li>
+                        <li>Developed a club filing system emphasizing club longevity and ease of use</li>
+                        <li>Created a club discord with artificial intelligence based moderation, a structured role system, with 62 participants</li>
+                        <li>Assists in preparations for weekly administrative meetings and weekly events averaging 18 participants</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Epistemai, Philosophy Journal at University of Minnesota, Twin Cities</h4>
+                    <p>Oct. 2022 – Present<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Editor-in-Chief (2023-2024), Peer Reviewer and Editor (2022-2023)</li>
+                        <li>23 member team under direction of Editor-in-Chief and President</li>
+                        <li>Reviews 30-40 academic philosophy papers for possible publication organized through member-accessible spreadsheets</li>
+                        <li>Guides 3-4 student authors through the editorial process providing insight and guidance</li>
+                        <li>Assists in running/runs weekly journal meetings including creation of spreadsheets and work delegation</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>German Club, University of Minnesota, Twin Cities</h4>
+                    <p>Oct. 2022 – Present<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>President (2023-2024), Secretary (2022-2023)</li>
+                        <li>Organizes weekly administrative meetings and monthly events averaging 20 participants</li>
+                        <li>Developed a club filing system emphasizing club longevity and ease of use</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Work Experience</h3>
+                <div class="resume-item">
+                    <h4>Delivery Driver, Doordash</h4>
+                    <p>Nov. 2021 - March 2023<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>4.96/5 Consumer satisfaction score, 353 total deliveries, 4 Above and beyond customer distinctions</li>
+                        <li>Observed and measured trends of consumer demand in order to maximize profitable working hours</li>
+                        <li>Created an algorithm to automate order selection in order to efficiently maximize profits</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Legal Assistant, Briol and Benson, PLLC</h4>
+                    <p>June 2019 - Aug. 2022<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Improved organization and security for both paper and computerized files via creation of file management system</li>
+                        <li>Cataloged and organized thousands of archived legal documents</li>
+                        <li>Found cost-effective solutions to large problems i.e. utilizing a specialized artificial intelligence software for deposition transcription that was more cost effective than employee time</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section interests">
+                <h3>Skills & Interests</h3>
+                <div class="resume-item">
+                    <h4>Skills</h4>
+                    <ul>
+                        <li><strong>Computer:</strong> Python (Intermediate), C (Beginner), LaTeX (Advanced), Google Drive, Microsoft Office, Music Composition Software, Zoom</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Hobbies</h4>
+                    <ul>
+                        <li>Classical Piano</li>
+                        <li>Rock Climbing</li>
+                        <li>Powerlifting</li>
+                        <li>Chess</li>
+                        <li>Literature</li>
+                        <li>Sudoku</li>
+                        <li>Yoga</li>
+                        <li>Hiking</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>
-
+    
     <footer>
         <p>&copy; 2024 Blake Briol. All rights reserved.</p>
     </footer>
