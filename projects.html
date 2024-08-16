@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Blake Briol</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -107,6 +108,15 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transform: translateY(-5px);
         }
+
+        .project-card a {
+            color: #f0f0f0; /* Set link color to white */
+            text-decoration: none;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -126,8 +136,16 @@
             <h2>Projects</h2>
             <p>Explore my projects below. Click on the project titles for more details.</p>
             <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description and details of project 1.</p>
+                <h3><a href="https://github.com/BlakeBriol/Work_Assistant" target="_blank">Work Assistant</a></h3>
+                <p>This project was created so that I could more easily input work-hours, track trends, and manage a large data set of entries. This has 9 features including:</p>
+                <ul>
+                    <li>Data input (Job, Date, Clock-in, Clock-out, and Wage)</li>
+                    <li>Total Revenue</li>
+                    <li>Taxed Revenue</li>
+                    <li>Graph Trends</li>
+                    <li>Give Statistics</li>
+                </ul>
+                <p>I am currently working towards this project being a fully isolated program.</p>
             </div>
             <div class="project-card">
                 <h3>Project 2</h3>
