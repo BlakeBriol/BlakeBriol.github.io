@@ -193,25 +193,5 @@
         <p>&copy; 2024 Blake Briol. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(this);
-            fetch('https://example.com/submit-form', { // Replace with your form handler URL
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('formResponse').innerHTML = '<p>Thank you for your message!</p>';
-                this.reset(); // Reset the form fields
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('formResponse').innerHTML = '<p>Sorry, there was an error. Please try again later.</p>';
-            });
-        });
-    </script>
 </body>
 </html>
