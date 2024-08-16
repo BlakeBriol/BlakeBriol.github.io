@@ -117,18 +117,26 @@
             color: #f0f0f0;
         }
 
-        input[type="submit"] {
+        input[type="submit"], button {
             background: #007bff;
             border: none;
             color: #fff;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
             padding: 1em;
             border-radius: 4px;
+            font-size: 1em;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: inline-block;
+            text-align: center;
+            border: 1px solid transparent;
         }
 
-        input[type="submit"]:hover {
+        input[type="submit"]:hover, button:hover {
             background: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
         }
 
         label {
@@ -149,23 +157,31 @@
             <a href="/test">Test</a>
         </nav>
     </header>
-    
+
     <div class="container">
         <section id="contact">
             <h2>Contact Me</h2>
             <p>If you would like to get in touch, please use the form below.</p>
             <div class="contact-form">
-                <form id="contactForm">
-                    <label for="name">Name</label>
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="46320747-edc5-4886-a576-ef1694a8ce98">
+                    
+                    <!-- Form Inputs -->
+                    <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
-                    
-                    <label for="email">Email</label>
+
+                    <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <input type="hidden" name="redirect" value="https://BlakeBriol.com/thank_you.html">
                     
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    
-                    <input type="submit" value="Send Message">
+                    <button type="submit">Send Message</button>
                 </form>
                 <div id="formResponse"></div>
             </div>
