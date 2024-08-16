@@ -18,9 +18,9 @@ def resume():
 def projects():
     return render_template("projects.html")
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact')
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.php")
 
 @app.route('/thank_you')
 def thank_you():
