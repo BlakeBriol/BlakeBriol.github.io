@@ -12,21 +12,48 @@
             background-color: #121212;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
         }
+
+        /* Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top right, #111, #333);
+            z-index: -1; /* Place it behind all content */
+            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+        }
+
         header {
             background-color: #1e1e1e;
             color: #f0f0f0;
-            padding: 1em 0;
+            padding: 1em;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em; /* Larger font size for header */
+        }
+
         nav {
             margin: 0;
             padding: 0;
         }
+
         nav a {
             color: #f0f0f0;
             text-decoration: none;
@@ -36,10 +63,12 @@
             border-bottom: 2px solid transparent;
             padding-bottom: 5px;
         }
+
         nav a:hover {
             color: #e0e0e0;
             border-bottom: 2px solid #e0e0e0;
         }
+
         .container {
             width: 80%;
             margin: 2em auto;
@@ -47,7 +76,9 @@
             background-color: #1c1c1c;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Include padding in width */
         }
+
         footer {
             background-color: #1e1e1e;
             color: #f0f0f0;
@@ -57,39 +88,53 @@
             width: 100%;
             box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
+
         h1, h2, h3 {
             color: #e0e0e0;
             margin: 0 0 1em;
         }
+
         .contact-form {
             background: #2c2c2c;
-            border-radius: 8px;
-            padding: 1.5em;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            border-radius: 12px; /* Match the feature cards */
+            padding: 2em; /* Increased padding for consistency */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: box-shadow 0.3s, transform 0.3s;
         }
+
         .contact-form:hover {
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transform: translateY(-5px);
         }
+
         input, textarea {
             width: 100%;
             padding: 0.8em;
             border: 1px solid #333;
             border-radius: 4px;
-            margin-bottom: 1em;
+            margin-bottom: 1.5em; /* Increased margin for consistency */
             background: #2c2c2c;
             color: #f0f0f0;
         }
+
         input[type="submit"] {
             background: #007bff;
             border: none;
             color: #fff;
             cursor: pointer;
             transition: background 0.3s;
+            padding: 1em;
+            border-radius: 4px;
         }
+
         input[type="submit"]:hover {
             background: #0056b3;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+            color: #e0e0e0;
         }
     </style>
 </head>
@@ -101,7 +146,7 @@
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>   
-            <a href="test.html">test</a>
+            <a href="test.html">Test</a>
         </nav>
     </header>
     
