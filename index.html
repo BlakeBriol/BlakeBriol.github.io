@@ -10,8 +10,8 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #f0f0f0;
-            background-color: #121212;
+            color: #333; /* Dark gray text for readability */
+            background-color: #f4f4f4; /* Light gray background */
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
@@ -25,17 +25,17 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #111, #333);
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
             z-index: -1; /* Place it behind all content */
             pointer-events: none; /* Ensure it doesn’t interfere with interactions */
         }
 
         header {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
+            background-color: #003366; /* Dark blue background for header */
+            color: #ffffff; /* White text */
             padding: 1em;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -58,7 +58,7 @@
         }
 
         nav a {
-            color: #f0f0f0;
+            color: #ffffff; /* White links */
             text-decoration: none;
             margin: 0 15px;
             font-weight: 700;
@@ -68,32 +68,32 @@
         }
 
         nav a:hover {
-            color: #e0e0e0;
-            border-bottom: 2px solid #e0e0e0;
+            color: #e0e0e0; /* Slightly lighter white on hover */
+            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
         }
 
         .container {
             width: 80%;
             margin: 2em auto;
             padding: 2em;
-            background-color: #1c1c1c;
+            background-color: #f0f8ff; /* Very light blue for container background */
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             box-sizing: border-box; /* Include padding in width */
         }
 
         footer {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
+            background-color: #003366; /* Dark blue background for footer */
+            color: #ffffff; /* White text */
             text-align: center;
             padding: 1em 0;
             position: relative;
             width: 100%;
-            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
         }
 
         h1, h2, h3 {
-            color: #e0e0e0;
+            color: #003366; /* Dark blue headers */
             margin: 0 0 1em;
         }
 
@@ -101,7 +101,7 @@
             text-align: center;
             margin-bottom: 3em; /* Increase margin-bottom */
             padding: 2em;
-            background: #333;
+            background: #007acc; /* Medium blue background for hero section */
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
@@ -109,11 +109,12 @@
         .hero h2 {
             font-size: 2.5em;
             margin: 0;
+            color: #ffffff; /* White text in hero section */
         }
 
         .hero p {
             font-size: 1.2em;
-            color: #d0d0d0;
+            color: #ffffff; /* White text in hero section */
         }
 
         .feature {
@@ -124,7 +125,7 @@
         }
 
         .feature-card {
-            background: #2c2c2c;
+            background: #e0f7ff; /* Light blue background for feature cards */
             border-radius: 12px;
             padding: 2em;
             flex: 1 1 calc(33% - 1.5em);
@@ -139,10 +140,43 @@
 
         .feature-card h3 {
             margin: 0 0 1em;
+            color: #003366; /* Dark blue headings in feature cards */
         }
 
         .feature-card p {
-            color: #d0d0d0;
+            color: #333; /* Dark gray text for feature card paragraphs */
+        }
+
+        .about-me {
+            background-color: #e0f7ff; /* Light blue for about me section */
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-top: 3em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-me img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1em;
+            border: 3px solid #007acc; /* Medium blue border for the image */
+        }
+
+        .about-me h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+            color: #003366; /* Dark blue text */
+        }
+
+        .about-me p {
+            color: #333; /* Dark gray text */
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -154,6 +188,7 @@
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>   
+            <a href="test.html">Test</a>
         </nav>
     </header>
     
@@ -177,6 +212,21 @@
                 <p>Find out how you can contact me for collaborations, inquiries, or just to send a greeting!</p>
             </div>
         </section>
+
+        <!-- About Me Section -->
+        <section class="about-me">
+            <img src="HeadS.png" alt="Me!">
+            <h2>About Me</h2>
+            <p>
+               PLACEHOLDER
+            </p>
+            <p>
+               PLACEHOLDER
+            </p>
+            <p>
+               PLACEHOLDER
+            </p>
+        </section>
     </div>
 
     <footer>
@@ -184,4 +234,3 @@
     </footer>
 </body>
 </html>
- 
