@@ -10,6 +10,10 @@ CSV_FILE = 'contact_data.csv'
 def index():
     return render_template("index.html")
 
+@app.route('/')
+def google():
+    return render_template("google1535de97be53bc0a.html")
+
 @app.route('/resume')
 def resume():
     return render_template("resume.html")
