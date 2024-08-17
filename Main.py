@@ -32,7 +32,7 @@ def thank_you():
 
 @app.route('/test')
 def test():
-    return render_template("test.html")
+    return render_template("test120529.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, debug=True)
