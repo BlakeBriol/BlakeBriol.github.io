@@ -9,8 +9,8 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #f0f0f0;
-            background-color: #121212;
+            color: #333; /* Dark gray text for readability */
+            background-color: #f4f4f4; /* Light gray background */
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
@@ -24,17 +24,17 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #111, #333);
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
             z-index: -1; /* Place it behind all content */
             pointer-events: none; /* Ensure it doesn’t interfere with interactions */
         }
 
         header {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
+            background-color: #003366; /* Dark blue background for header */
+            color: #ffffff; /* White text */
             padding: 1em;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -56,7 +56,7 @@
         }
 
         nav a {
-            color: #f0f0f0;
+            color: #ffffff; /* White links */
             text-decoration: none;
             margin: 0 15px;
             font-weight: 700;
@@ -66,37 +66,37 @@
         }
 
         nav a:hover {
-            color: #e0e0e0;
-            border-bottom: 2px solid #e0e0e0;
+            color: #e0e0e0; /* Slightly lighter white on hover */
+            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
         }
 
         .container {
             width: 80%;
             margin: 2em auto;
             padding: 2em;
-            background-color: #1c1c1c;
+            background-color: #f0f8ff; /* Very light blue for container background */
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             box-sizing: border-box; /* Include padding in width */
         }
 
         footer {
-            background-color: #1e1e1e;
-            color: #f0f0f0;
+            background-color: #003366; /* Dark blue background for footer */
+            color: #ffffff; /* White text */
             text-align: center;
             padding: 1em 0;
             position: relative;
             width: 100%;
-            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
         }
 
         h1, h2, h3 {
-            color: #e0e0e0;
+            color: #003366; /* Dark blue headers */
             margin: 0 0 1em;
         }
 
         .project-card {
-            background: #2c2c2c;
+            background: #e0f7ff; /* Light blue background for project cards */
             border-radius: 12px; /* Match the feature cards */
             padding: 2em; /* Increased padding for consistency */
             margin-bottom: 2em; /* Increased margin for vertical spacing */
@@ -110,7 +110,7 @@
         }
 
         .project-card a {
-            color: #f0f0f0; /* Set link color to white */
+            color: #003366; /* Dark blue link color */
             text-decoration: none;
         }
 
@@ -120,7 +120,7 @@
 
         /* Specific rule for links inside project-card */
         .project-card a.website-link {
-            color: #f0f0f0; /* Ensure this link is white */
+            color: #003366; /* Dark blue link color for website links */
         }
     </style>
 </head>
