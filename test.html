@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Blake Briol</title>
+    <meta name="description" content="Welcome to Blake Briol's personal website. Explore projects, experience, and contact information.">
+    <meta name="keywords" content="Blake Briol, projects, resume, contact">
+    <title>Home - Blake Briol</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -12,21 +14,49 @@
             background-color: #121212;
             margin: 0;
             padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
         }
+
+        /* Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top right, #111, #333);
+            z-index: -1; /* Place it behind all content */
+            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+        }
+
         header {
             background-color: #1e1e1e;
             color: #f0f0f0;
-            padding: 1em 0;
+            padding: 1em;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
+
+        header .name {
+            font-weight: 700;
+            font-size: 2em; /* Larger font size for the name */
+            margin-left: 1em;
+        }
+
         nav {
             margin: 0;
             padding: 0;
         }
+
         nav a {
             color: #f0f0f0;
             text-decoration: none;
@@ -36,10 +66,12 @@
             border-bottom: 2px solid transparent;
             padding-bottom: 5px;
         }
+
         nav a:hover {
             color: #e0e0e0;
             border-bottom: 2px solid #e0e0e0;
         }
+
         .container {
             width: 80%;
             margin: 2em auto;
@@ -47,7 +79,9 @@
             background-color: #1c1c1c;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Include padding in width */
         }
+
         footer {
             background-color: #1e1e1e;
             color: #f0f0f0;
@@ -57,52 +91,138 @@
             width: 100%;
             box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
+
         h1, h2, h3 {
             color: #e0e0e0;
             margin: 0 0 1em;
         }
-        .project-card {
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3em; /* Increase margin-bottom */
+            padding: 2em;
+            background: #333;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: #d0d0d0;
+        }
+
+        .feature {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            margin-top: 3em; /* Increase margin-top */
+        }
+
+        .feature-card {
             background: #2c2c2c;
-            border-radius: 8px;
-            padding: 1.5em;
-            margin-bottom: 1.5em;
+            border-radius: 12px;
+            padding: 2em;
+            flex: 1 1 calc(33% - 1.5em);
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: box-shadow 0.3s, transform 0.3s;
         }
-        .project-card:hover {
+
+        .feature-card:hover {
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin: 0 0 1em;
+        }
+
+        .feature-card p {
+            color: #d0d0d0;
+        }
+
+        .about-me {
+            background-color: #2c2c2c;
+            padding: 2em;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-top: 3em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .about-me img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 1em;
+            border: 3px solid #333;
+        }
+
+        .about-me h2 {
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .about-me p {
+            color: #d0d0d0;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Blake Briol's Portfolio</h1>
+        <div class="name">Blake Briol</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>   
-            <a href="test.html">test</a>
+            <a href="test.html">Test</a>
         </nav>
     </header>
     
     <div class="container">
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Explore my projects below. Click on the project titles for more details.</p>
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description and details of project 1.</p>
+        <section class="hero">
+            <h2>Welcome to My Website</h2>
+            <p>Explore my past works, background, and get in touch!</p>
+        </section>
+
+        <section class="feature">
+            <div class="feature-card">
+                <h3>Past and Present Projects</h3>
+                <p>Learn about some of my past projects as well as some I am still working on</p>
             </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description and details of project 2.</p>
+            <div class="feature-card">
+                <h3>Professional and Personal Experience</h3>
+                <p>Learn about my professional background and the roles I have taken on</p>
             </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Description and details of project 3.</p>
+            <div class="feature-card">
+                <h3>Get in Touch</h3>
+                <p>Find out how you can contact me for collaborations, inquiries, or just to send a greeting!</p>
             </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section class="about-me">
+            <img src="Web.png" alt="">
+            <h2>About Me</h2>
+            <p>
+                Hello! I'm Blake Briol, a passionate developer and creative thinker. I have a strong background in web development, having worked on various projects ranging from small business websites to complex applications. My journey began with a fascination for technology and problem-solving, which led me to pursue a career in this dynamic field.
+            </p>
+            <p>
+                Over the years, I've honed my skills in various programming languages and frameworks, and I'm always eager to learn new technologies. My professional experience has provided me with opportunities to collaborate with talented teams, tackle challenging problems, and contribute to meaningful projects.
+            </p>
+            <p>
+                In addition to my technical skills, I value clear communication and a collaborative approach to problem-solving. I'm enthusiastic about leveraging technology to create innovative solutions and make a positive impact. Feel free to explore my portfolio, and don't hesitate to reach out if you'd like to connect!
+            </p>
         </section>
     </div>
 
