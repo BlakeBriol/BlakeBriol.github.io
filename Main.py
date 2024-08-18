@@ -30,6 +30,10 @@ def contact():
 def thank_you():
     return render_template("thank_you.html")
 
+@app.route('/')
+def music():
+    return render_template("music.html")
+
 @app.route('/test')
 def test():
     return render_template("test120529.html")
