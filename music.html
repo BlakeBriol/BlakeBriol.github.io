@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blake Briol's music portfolio showcasing audio samples and sheet music.">
+    <meta name="keywords" content="Blake Briol, music portfolio, audio samples, sheet music">
+    <title>Music Portfolio - Blake Briol</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333; /* Dark gray text for readability */
+            background-color: #f4f4f4; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
+        }
+
+        /* Gradient Background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
+            z-index: -1; /* Place it behind all content */
+            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+        }
+
+        header {
+            background-color: #003366; /* Dark blue background for header */
+            color: #ffffff; /* White text */
+            padding: 1em;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        header .name {
+            font-weight: 700;
+            font-size: 2em; /* Larger font size for the name */
+            margin-left: 1em;
+        }
+
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: #ffffff; /* White links */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 5px;
+        }
+
+        nav a:hover {
+            color: #e0e0e0; /* Slightly lighter white on hover */
+            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
+        }
+
+        .container {
+            width: 80%;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #f0f8ff; /* Very light blue for container background */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        footer {
+            background-color: #003366; /* Dark blue background for footer */
+            color: #ffffff; /* White text */
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
+        }
+
+        h1, h2, h3 {
+            color: #003366; /* Dark blue headers */
+            margin: 0 0 1em;
+        }
+
+        .portfolio-section {
+            margin-bottom: 2em;
+        }
+
+        .portfolio-item {
+            background: #e0f7ff; /* Light blue background for portfolio items */
+            border-radius: 12px;
+            padding: 1.5em;
+            margin-bottom: 1.5em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: box-shadow 0.3s, transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .portfolio-item:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+        }
+
+        .portfolio-item h4 {
+            margin: 0 0 0.5em;
+            color: #003366; /* Dark blue text */
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .portfolio-item p {
+            color: #333; /* Dark gray text for readability */
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .portfolio-item audio {
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 500px; /* Adjust height as needed */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="name">Blake Briol</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section id="portfolio">
+            <h2>Music Portfolio</h2>
+
+            <div class="portfolio-section">
+                <div class="portfolio-item">
+                    <h4>Interpedio</h4>
+                    <audio controls>
+                        <source src="Interpedio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <embed class="pdf-viewer" src="Interpedio.pdf" type="application/pdf">
+                    <p>Composition by Blake Briol - Interpedio. Click the PDF to view the sheet music.</p>
+                </div>
+
+                <div class="portfolio-item">
+                    <h4>A Ways Away</h4>
+                    <audio controls>
+                        <source src="A_Ways_Away.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <embed class="pdf-viewer" src="A_Ways_Away.pdf" type="application/pdf">
+                    <p>Composition by Blake Briol - A Ways Away. Click the PDF to view the sheet music.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h4>Sweet Tea</h4>
+                    <audio controls>
+                        <source src="Sweet_Tea.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <embed class="pdf-viewer" src="Sweet_Tea.pdf" type="application/pdf">
+                    <p>Composition by Blake Briol - Sweet Tea. Click the PDF to view the sheet music.</p>
+                </div>
+                <div class="portfolio-item">
+                    <h4>Spring Air</h4>
+                    <audio controls>
+                        <source src="Spring_Air.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <embed class="pdf-viewer" src="Spring_Air.pdf" type="application/pdf">
+                    <p>Composition by Blake Briol - Spring Air. Click the PDF to view the sheet music.</p>
+                    </div>
+                    <div class="portfolio-item">
+                    <h4>Fantasy</h4>
+                    <audio controls>
+                        <source src="Fantasy.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <embed class="pdf-viewer" src="Fantasy.pdf" type="application/pdf">
+                    <p>Composition by Blake Briol - Fantasy. Click the PDF to view the sheet music.</p>
+                    </div>
+                <!-- Add more combined sections as needed -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Blake Briol. All rights reserved.</p>
+    </footer>
+</body>
+</html>
