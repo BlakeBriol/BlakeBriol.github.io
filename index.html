@@ -11,14 +11,13 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333; /* Dark gray text for readability */
-            background-color: #f4f4f4; /* Light gray background */
+            color: #333;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
+            overflow-x: hidden;
         }
 
-        /* Gradient Background */
         body::before {
             content: "";
             position: fixed;
@@ -26,37 +25,38 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
-            z-index: -1; /* Place it behind all content */
-            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff);
+            z-index: -1;
+            pointer-events: none;
         }
 
         header {
-            background-color: #003366; /* Dark blue background for header */
-            color: #ffffff; /* White text */
+            background-color: #003366;
+            color: #ffffff;
             padding: 1em;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
-            align-items: center; /* Align items vertically in the center */
+            align-items: center;
             width: 100%;
-            box-sizing: border-box; /* Ensure padding is included in width */
-            position: relative; /* For positioning the logo */
+            box-sizing: border-box;
+            position: relative;
         }
 
         .header-content {
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
 
         .name {
             font-weight: 700;
-            font-size: 2em; /* Larger font size for the name */
-            margin-right: auto; /* Push logo to the center */
-            margin-left: 0.5em; /* Adjust this value to move name slightly to the right */
+            font-size: 2em;
+            margin-right: auto;
+            margin-left: 0.5em;
         }
 
         .logo-container {
@@ -66,17 +66,17 @@
         }
 
         .logo-container img {
-            width: 50px; /* Adjust size as needed */
-            height: 50px; /* Adjust size as needed */
+            width: 50px;
+            height: 50px;
         }
 
         nav {
-            margin-left: auto; /* Align navigation to the right */
+            margin-left: auto;
             display: flex;
         }
 
         nav a {
-            color: #ffffff; /* White links */
+            color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 700;
@@ -86,23 +86,23 @@
         }
 
         nav a:hover {
-            color: #e0e0e0; /* Slightly lighter white on hover */
-            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
+            color: #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .container {
             width: 80%;
             margin: 2em auto;
             padding: 2em;
-            background-color: #f0f8ff; /* Very light blue for container background */
+            background-color: #f0f8ff;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            box-sizing: border-box; /* Include padding in width */
+            box-sizing: border-box;
         }
 
         footer {
-            background-color: #003366; /* Dark blue background for footer */
-            color: #ffffff; /* White text */
+            background-color: #003366;
+            color: #ffffff;
             text-align: center;
             padding: 1em 0;
             position: relative;
@@ -111,15 +111,15 @@
         }
 
         h1, h2, h3 {
-            color: #003366; /* Dark blue headers */
+            color: #003366;
             margin: 0 0 1em;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 3em; /* Increase margin-bottom */
+            margin-bottom: 3em;
             padding: 2em;
-            background: #007acc; /* Medium blue background for hero section */
+            background: #007acc;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
@@ -127,23 +127,23 @@
         .hero h2 {
             font-size: 2.5em;
             margin: 0;
-            color: #ffffff; /* White text in hero section */
+            color: #ffffff;
         }
 
         .hero p {
             font-size: 1.2em;
-            color: #ffffff; /* White text in hero section */
+            color: #ffffff;
         }
 
         .feature {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5em;
-            margin-top: 3em; /* Increase margin-top */
+            margin-top: 3em;
         }
 
         .feature-card {
-            background: #e0f7ff; /* Light blue background for feature cards */
+            background: #e0f7ff;
             border-radius: 12px;
             padding: 2em;
             flex: 1 1 calc(33% - 1.5em);
@@ -158,15 +158,15 @@
 
         .feature-card h3 {
             margin: 0 0 1em;
-            color: #003366; /* Dark blue headings in feature cards */
+            color: #003366;
         }
 
         .feature-card p {
-            color: #333; /* Dark gray text for feature card paragraphs */
+            color: #333;
         }
 
         .about-me {
-            background-color: #e0f7ff; /* Light blue for about me section */
+            background-color: #e0f7ff;
             padding: 2em;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -183,18 +183,57 @@
             height: 150px;
             object-fit: cover;
             margin-bottom: 1em;
-            border: 3px solid #007acc; /* Medium blue border for the image */
+            border: 3px solid #007acc;
         }
 
         .about-me h2 {
             font-size: 2em;
             margin-bottom: 1em;
-            color: #003366; /* Dark blue text */
+            color: #003366;
         }
 
         .about-me p {
-            color: #333; /* Dark gray text */
+            color: #333;
             line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 1.5em;
+            }
+
+            .logo-container img {
+                width: 40px;
+                height: 40px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .feature-card {
+                flex: 1 1 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .name {
+                font-size: 1.2em;
+            }
+
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -235,7 +274,6 @@
             </div>
         </section>
 
-        <!-- About Me Section -->
         <section class="about-me">
             <img src="HeadS.png" alt="Me!">
             <h2>About Me</h2>
