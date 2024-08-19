@@ -33,28 +33,45 @@
         header {
             background-color: #003366; /* Dark blue background for header */
             color: #ffffff; /* White text */
-            padding: 1em;
-            text-align: center;
+            padding: 1em 2em;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             width: 100%;
             box-sizing: border-box; /* Ensure padding is included in width */
+            position: relative; /* For positioning the logo */
         }
 
-        header .name {
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .name {
             font-weight: 700;
             font-size: 2em; /* Larger font size for the name */
-            margin-left: 1em;
+            margin-right: auto; /* Push logo to the center */
+            margin-left: 2em; /* Adjust this value to move name slightly to the right */
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .logo-container img {
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
         }
 
         nav {
-            margin: 0;
-            padding: 0;
+            margin-left: auto; /* Align navigation to the right */
+            display: flex;
         }
 
         nav a {
@@ -147,13 +164,18 @@
 </head>
 <body>
     <header>
-        <div class="name">Blake Briol</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="header-content">
+            <div class="name">Blake Briol</div>
+            <div class="logo-container">
+                <img src="favicon.ico" alt="Logo">
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
     
     <div class="container">
@@ -206,8 +228,8 @@
                     </audio>
                     <embed class="pdf-viewer" src="Spring_Air.pdf" type="application/pdf">
                     <p>Composition by Blake Briol - Spring Air.</p>
-                    </div>
-                    <div class="portfolio-item">
+                </div>
+                <div class="portfolio-item">
                     <h4>Fantasy</h4>
                     <audio controls>
                         <source src="Fantasy.mp3" type="audio/mpeg">
@@ -215,7 +237,7 @@
                     </audio>
                     <embed class="pdf-viewer" src="Fantasy.pdf" type="application/pdf">
                     <p>Composition by Blake Briol - Fantasy.</p>
-                    </div>
+                </div>
                 <!-- Add more combined sections as needed -->
             </div>
         </section>
