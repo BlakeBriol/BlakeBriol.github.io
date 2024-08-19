@@ -8,14 +8,13 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333; /* Dark gray text for readability */
-            background-color: #f4f4f4; /* Light gray background */
+            color: #333;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
+            overflow-x: hidden;
         }
 
-        /* Gradient Background */
         body::before {
             content: "";
             position: fixed;
@@ -23,39 +22,59 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
-            z-index: -1; /* Place it behind all content */
-            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff);
+            z-index: -1;
+            pointer-events: none;
         }
 
         header {
-            background-color: #003366; /* Dark blue background for header */
-            color: #ffffff; /* White text */
+            background-color: #003366;
+            color: #ffffff;
             padding: 1em 2em;
-            text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: space-between;
             width: 100%;
-            box-sizing: border-box; /* Ensure padding is included in width */
+            box-sizing: border-box;
+            position: relative;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2em; /* Larger font size for header */
+        .header-content {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .name {
+            font-weight: 700;
+            font-size: 2em;
+            margin-right: auto;
+            margin-left: 0.5em;
+        }
+
+        .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .logo-container img {
+            width: 50px;
+            height: 50px;
         }
 
         nav {
-            margin: 0;
-            padding: 0;
+            margin-left: auto;
+            display: flex;
         }
 
         nav a {
-            color: #ffffff; /* White links */
+            color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 700;
@@ -65,24 +84,24 @@
         }
 
         nav a:hover {
-            color: #e0e0e0; /* Slightly lighter white on hover */
-            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
+            color: #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .container {
             width: 80%;
             margin: 2em auto;
             padding: 2em;
-            background-color: #f0f8ff; /* Very light blue for container background */
+            background-color: #f0f8ff;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            box-sizing: border-box; /* Include padding in width */
-            text-align: center; /* Center-align text for the thank you page */
+            box-sizing: border-box;
+            text-align: center;
         }
 
         footer {
-            background-color: #003366; /* Dark blue background for footer */
-            color: #ffffff; /* White text */
+            background-color: #003366;
+            color: #ffffff;
             text-align: center;
             padding: 1em 0;
             position: relative;
@@ -91,12 +110,12 @@
         }
 
         h1, h2 {
-            color: #003366; /* Dark blue headers */
+            color: #003366;
             margin: 0 0 1em;
         }
 
         .message {
-            background: #e0f7ff; /* Light blue background for message box */
+            background: #e0f7ff;
             border-radius: 12px;
             padding: 2em;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -112,13 +131,18 @@
 </head>
 <body>
     <header>
-        <h1>Thank You</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="header-content">
+            <div class="name">Blake Briol</div>
+            <div class="logo-container">
+                <img src="favicon.ico" alt="Logo">
+            </div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
     
     <div class="container">
