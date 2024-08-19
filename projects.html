@@ -42,26 +42,22 @@
             align-items: center;
             width: 100%;
             box-sizing: border-box;
-            position: relative;
         }
 
         .header-content {
             width: 100%;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
 
         .name {
             font-weight: 700;
             font-size: 2em;
-            margin-right: auto;
-            margin-left: 0.5em;
         }
 
         .logo-container {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            flex-shrink: 0;
         }
 
         .logo-container img {
@@ -70,14 +66,13 @@
         }
 
         nav {
-            margin-left: auto;
             display: flex;
+            gap: 15px;
         }
 
         nav a {
             color: #ffffff;
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 700;
             transition: color 0.3s, border-bottom 0.3s;
             border-bottom: 2px solid transparent;
@@ -90,7 +85,8 @@
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 2em auto;
             padding: 2em;
             background-color: #f0f8ff;
@@ -140,6 +136,45 @@
         .container p a {
             color: inherit;
             text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .name {
+                font-size: 1.5em;
+            }
+
+            .logo-container {
+                margin-bottom: 1em;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .project-card {
+                padding: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1em;
+            }
+
+            .project-card {
+                padding: 1em;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
