@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Blake Briol's resume showcasing education, experience, and skills.">
     <meta name="keywords" content="Blake Briol, resume, education, experience, skills">
+    <meta name="apple-mobile-web-app-title" content="Blake Briol's Resume">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#003366">
     <title>Resume - Blake Briol</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -49,6 +53,7 @@
             width: 100%;
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .name {
@@ -72,6 +77,8 @@
         nav {
             margin-left: auto;
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         nav a {
@@ -90,7 +97,8 @@
         }
 
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 1200px;
             margin: 2em auto;
             padding: 2em;
             background-color: #f0f8ff;
@@ -190,6 +198,46 @@
 
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .name {
+                font-size: 1.5em;
+            }
+
+            .logo-container img {
+                width: 40px;
+                height: 40px;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9em;
+            }
+
+            .container {
+                width: 95%;
+                padding: 1em;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            .resume-item {
+                padding: 1em;
+            }
         }
     </style>
 </head>
