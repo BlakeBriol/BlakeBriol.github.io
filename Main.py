@@ -36,7 +36,7 @@ def music():
 
 @app.route('/test')
 def test():
-    return render_template("pages/test12052.html")
+    return render_template("pages/test.html")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80, debug=True)
