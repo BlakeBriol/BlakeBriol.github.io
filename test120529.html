@@ -8,7 +8,6 @@
     <title>Home - Blake Briol</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-     
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -36,33 +35,42 @@
             background-color: #003366; /* Dark blue background for header */
             color: #ffffff; /* White text */
             padding: 1em;
-            text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
             width: 100%;
             box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        header .logo {
+            margin-bottom: 1em; /* Space between logo and name */
+        }
+
+        header .logo img {
+            width: 50px; /* Adjust logo size */
+            height: 50px; /* Adjust logo size */
         }
 
         header .name {
             font-weight: 700;
             font-size: 2em; /* Larger font size for the name */
-            margin-left: 1em;
+            margin: 0.5em 0; /* Space around name */
         }
 
         nav {
             margin: 0;
             padding: 0;
+            display: flex;
+            gap: 15px; /* Space between navigation links */
         }
 
         nav a {
             color: #ffffff; /* White links */
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 700;
             transition: color 0.3s, border-bottom 0.3s;
             border-bottom: 2px solid transparent;
@@ -184,6 +192,9 @@
 </head>
 <body>
     <header>
+        <a href="favicon.ico" class="logo">
+            <img src="favicon.ico" alt="Logo">
+        </a>
         <div class="name">Blake Briol</div>
         <nav>
             <a href="index.html">Home</a>
