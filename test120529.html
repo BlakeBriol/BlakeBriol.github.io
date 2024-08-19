@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +11,14 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333;
-            /* Dark gray text for readability */
-            background-color: #f4f4f4;
-            /* Light gray background */
+            color: #333; /* Dark gray text for readability */
+            background-color: #f4f4f4; /* Light gray background */
             margin: 0;
             padding: 0;
-            overflow-x: hidden;
-            /* Prevent horizontal scroll due to the gradient */
+            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
         }
 
         /* Gradient Background */
-
         body::before {
             content: "";
             position: fixed;
@@ -31,48 +26,52 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff);
-            /* Dark to light blue gradient */
-            z-index: -1;
-            /* Place it behind all content */
-            pointer-events: none;
-            /* Ensure it doesn’t interfere with interactions */
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
+            z-index: -1; /* Place it behind all content */
+            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
         }
 
         header {
-            background-color: #003366;
-            /* Dark blue background for header */
-            color: #ffffff;
-            /* White text */
+            background-color: #003366; /* Dark blue background for header */
+            color: #ffffff; /* White text */
             padding: 1em;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            align-items: center; /* Align items vertically in the center */
+            justify-content: space-between; /* Space between elements */
             width: 100%;
-            box-sizing: border-box;
-            /* Ensure padding is included in width */
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1; /* Allow the logo container to grow and push the nav to the right */
+            justify-content: center; /* Center the logo within its container */
+        }
+
+        header .logo-container img {
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
         }
 
         header .name {
             font-weight: 700;
-            font-size: 2em;
-            /* Larger font size for the name */
-            margin-left: 1em;
+            font-size: 2em; /* Larger font size for the name */
+            margin-right: 15px; /* Space between name and logo */
         }
 
         nav {
+            display: flex;
             margin: 0;
             padding: 0;
         }
 
         nav a {
-            color: #ffffff;
-            /* White links */
+            color: #ffffff; /* White links */
             text-decoration: none;
             margin: 0 15px;
             font-weight: 700;
@@ -82,108 +81,90 @@
         }
 
         nav a:hover {
-            color: #e0e0e0;
-            /* Slightly lighter white on hover */
-            border-bottom: 2px solid #e0e0e0;
-            /* Border color on hover */
+            color: #e0e0e0; /* Slightly lighter white on hover */
+            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
         }
 
         .container {
             width: 80%;
             margin: 2em auto;
             padding: 2em;
-            background-color: #f0f8ff;
-            /* Very light blue for container background */
+            background-color: #f0f8ff; /* Very light blue for container background */
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            box-sizing: border-box;
-            /* Include padding in width */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Include padding in width */
         }
 
         footer {
-            background-color: #003366;
-            /* Dark blue background for footer */
-            color: #ffffff;
-            /* White text */
+            background-color: #003366; /* Dark blue background for footer */
+            color: #ffffff; /* White text */
             text-align: center;
             padding: 1em 0;
             position: relative;
             width: 100%;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.3);
         }
 
-        h1,
-        h2,
-        h3 {
-            color: #003366;
-            /* Dark blue headers */
+        h1, h2, h3 {
+            color: #003366; /* Dark blue headers */
             margin: 0 0 1em;
         }
 
         .hero {
             text-align: center;
-            margin-bottom: 3em;
-            /* Increase margin-bottom */
+            margin-bottom: 3em; /* Increase margin-bottom */
             padding: 2em;
-            background: #007acc;
-            /* Medium blue background for hero section */
+            background: #007acc; /* Medium blue background for hero section */
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
         .hero h2 {
             font-size: 2.5em;
             margin: 0;
-            color: #ffffff;
-            /* White text in hero section */
+            color: #ffffff; /* White text in hero section */
         }
 
         .hero p {
             font-size: 1.2em;
-            color: #ffffff;
-            /* White text in hero section */
+            color: #ffffff; /* White text in hero section */
         }
 
         .feature {
             display: flex;
             flex-wrap: wrap;
             gap: 1.5em;
-            margin-top: 3em;
-            /* Increase margin-top */
+            margin-top: 3em; /* Increase margin-top */
         }
 
         .feature-card {
-            background: #e0f7ff;
-            /* Light blue background for feature cards */
+            background: #e0f7ff; /* Light blue background for feature cards */
             border-radius: 12px;
             padding: 2em;
             flex: 1 1 calc(33% - 1.5em);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: box-shadow 0.3s, transform 0.3s;
         }
 
         .feature-card:hover {
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transform: translateY(-5px);
         }
 
         .feature-card h3 {
             margin: 0 0 1em;
-            color: #003366;
-            /* Dark blue headings in feature cards */
+            color: #003366; /* Dark blue headings in feature cards */
         }
 
         .feature-card p {
-            color: #333;
-            /* Dark gray text for feature card paragraphs */
+            color: #333; /* Dark gray text for feature card paragraphs */
         }
 
         .about-me {
-            background-color: #e0f7ff;
-            /* Light blue for about me section */
+            background-color: #e0f7ff; /* Light blue for about me section */
             padding: 2em;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             margin-top: 3em;
             display: flex;
             flex-direction: column;
@@ -197,55 +178,35 @@
             height: 150px;
             object-fit: cover;
             margin-bottom: 1em;
-            border: 3px solid #007acc;
-            /* Medium blue border for the image */
+            border: 3px solid #007acc; /* Medium blue border for the image */
         }
 
         .about-me h2 {
             font-size: 2em;
             margin-bottom: 1em;
-            color: #003366;
-            /* Dark blue text */
+            color: #003366; /* Dark blue text */
         }
 
         .about-me p {
-            color: #333;
-            /* Dark gray text */
+            color: #333; /* Dark gray text */
             line-height: 1.6;
-        }
-
-        /* Fixed Position Logo */
-
-        .fixed-logo {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-            pointer-events: none;
-            /* Ensure it doesn’t interfere with interactions */
-        }
-
-        .fixed-logo img {
-            width: 100px;
-            /* Adjust size as needed */
-            height: 100px;
-            /* Adjust size as needed */
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="name">Blake Briol</div>
+        <div class="logo-container">
+            <img src="favicon.ico" alt="Logo">
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="resume.html">Resume</a>
             <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html">Contact</a>   
         </nav>
     </header>
-
+    
     <div class="container">
         <section class="hero">
             <h2>Welcome to My Website</h2>
@@ -272,8 +233,9 @@
             <img src="HeadS.png" alt="Me!">
             <h2>About Me</h2>
             <p>
-                Beginning my academic career in classical music, transferring to philosophy, and then joining with mathematics, coupled with numerous hobbies and interests, I find my greatest skills to be my adaptability in unique and challenging environments, my ability
-                to excel and lead in said environments, and my organizational skills to ensure the aforementioned.
+               Beginning my academic career in classical music, transferring to philosophy, and then joining with mathematics, coupled with numerous hobbies and
+               interests, I find my greatest skills to be my adaptability in unique and challenging environments, my ability to excel and lead in said 
+                environments, and my organizational skills to ensure the aforementioned.
             </p>
         </section>
     </div>
@@ -281,11 +243,5 @@
     <footer>
         <p>&copy; 2024 Blake Briol. All rights reserved.</p>
     </footer>
-
-    <!-- Fixed Logo -->
-    <div class="fixed-logo">
-        <img src="favicon.ico" alt="Logo">
-    </div>
 </body>
-
 </html>
