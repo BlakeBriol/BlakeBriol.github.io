@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Blake Briol's personal website. Explore projects, experience, and contact information.">
-    <meta name="keywords" content="Blake Briol, projects, resume, contact">
-    <title>Home - Blake Briol</title>
+    <meta name="description" content="Blake Briol's resume showcasing education, experience, and skills.">
+    <meta name="keywords" content="Blake Briol, resume, education, experience, skills">
+    <title>Resume - Blake Briol</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon Link -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            color: #333; /* Dark gray text for readability */
-            background-color: #f4f4f4; /* Light gray background */
+            color: #333;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll due to the gradient */
+            overflow-x: hidden;
         }
 
-        /* Gradient Background */
         body::before {
             content: "";
             position: fixed;
@@ -26,52 +25,55 @@
             right: 0;
             width: 100vw;
             height: 100vh;
-            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff); /* Dark to light blue gradient */
-            z-index: -1; /* Place it behind all content */
-            pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+            background: linear-gradient(to top right, #004080, #007acc, #e0f7ff);
+            z-index: -1;
+            pointer-events: none;
         }
 
         header {
-            background-color: #003366; /* Dark blue background for header */
-            color: #ffffff; /* White text */
+            background-color: #003366;
+            color: #ffffff;
             padding: 1em;
+            text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
-            align-items: center; /* Align items vertically in the center */
-            justify-content: space-between; /* Space between elements */
-            width: 100%;
-            box-sizing: border-box; /* Ensure padding is included in width */
-        }
-
-        header .logo-container {
-            display: flex;
             align-items: center;
-            flex-grow: 1; /* Allow the logo container to grow and push the nav to the right */
-            justify-content: center; /* Center the logo within its container */
-        }
-
-        header .logo-container img {
-            width: 50px; /* Adjust size as needed */
-            height: 50px; /* Adjust size as needed */
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         header .name {
             font-weight: 700;
-            font-size: 2em; /* Larger font size for the name */
-            margin-right: 15px; /* Space between name and logo */
+            font-size: 2em;
+            margin-left: 1em;
         }
 
         nav {
+            flex-grow: 1;
             display: flex;
-            margin: 0;
-            padding: 0;
+            align-items: center;
+            justify-content: center; /* Center the favicon */
+            position: relative;
         }
 
-        nav a {
-            color: #ffffff; /* White links */
+        nav img {
+            height: 40px; /* Adjust height as needed */
+            width: auto;
+        }
+
+        .nav-links {
+            position: absolute;
+            right: 1em;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
             text-decoration: none;
             margin: 0 15px;
             font-weight: 700;
@@ -80,24 +82,24 @@
             padding-bottom: 5px;
         }
 
-        nav a:hover {
-            color: #e0e0e0; /* Slightly lighter white on hover */
-            border-bottom: 2px solid #e0e0e0; /* Border color on hover */
+        .nav-links a:hover {
+            color: #e0e0e0;
+            border-bottom: 2px solid #e0e0e0;
         }
 
         .container {
             width: 80%;
             margin: 2em auto;
             padding: 2em;
-            background-color: #f0f8ff; /* Very light blue for container background */
+            background-color: #f0f8ff;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            box-sizing: border-box; /* Include padding in width */
+            box-sizing: border-box;
         }
 
         footer {
-            background-color: #003366; /* Dark blue background for footer */
-            color: #ffffff; /* White text */
+            background-color: #003366;
+            color: #ffffff;
             text-align: center;
             padding: 1em 0;
             position: relative;
@@ -106,137 +108,230 @@
         }
 
         h1, h2, h3 {
-            color: #003366; /* Dark blue headers */
+            color: #003366;
             margin: 0 0 1em;
         }
 
-        .hero {
-            text-align: center;
-            margin-bottom: 3em; /* Increase margin-bottom */
-            padding: 2em;
-            background: #007acc; /* Medium blue background for hero section */
+        .resume-section {
+            margin-bottom: 2em;
+        }
+
+        .resume-item {
+            background: #e0f7ff;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .hero h2 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #ffffff; /* White text in hero section */
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: #ffffff; /* White text in hero section */
-        }
-
-        .feature {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5em;
-            margin-top: 3em; /* Increase margin-top */
-        }
-
-        .feature-card {
-            background: #e0f7ff; /* Light blue background for feature cards */
-            border-radius: 12px;
-            padding: 2em;
-            flex: 1 1 calc(33% - 1.5em);
+            padding: 1.5em;
+            margin-bottom: 1.5em;
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             transition: box-shadow 0.3s, transform 0.3s;
         }
 
-        .feature-card:hover {
+        .resume-item:hover {
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
             transform: translateY(-5px);
         }
 
-        .feature-card h3 {
-            margin: 0 0 1em;
-            color: #003366; /* Dark blue headings in feature cards */
+        .resume-item h4 {
+            margin: 0 0 0.5em;
+            color: #003366;
+            font-weight: 700;
         }
 
-        .feature-card p {
-            color: #333; /* Dark gray text for feature card paragraphs */
-        }
-
-        .about-me {
-            background-color: #e0f7ff; /* Light blue for about me section */
-            padding: 2em;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            margin-top: 3em;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .about-me img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 1em;
-            border: 3px solid #007acc; /* Medium blue border for the image */
-        }
-
-        .about-me h2 {
-            font-size: 2em;
-            margin-bottom: 1em;
-            color: #003366; /* Dark blue text */
-        }
-
-        .about-me p {
-            color: #333; /* Dark gray text */
+        .resume-item p, .resume-item ul {
+            color: #333;
             line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 1.5em;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        .resume-item a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        .resume-item a:hover {
+            text-decoration: underline;
+        }
+
+        .interests {
+            background: #e0f7ff;
+            border-radius: 12px;
+            padding: 1.5em;
+            margin-top: 2em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .interests h4 {
+            color: #003366;
+            margin: 0 0 0.5em;
+        }
+
+        .interests ul {
+            padding-left: 1.5em;
+        }
+
+        .interests li {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        .contact-info a {
+            color: #003366;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="name">Blake Briol</div>
-        <div class="logo-container">
-            <img src="favicon.ico" alt="Logo">
-        </div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="resume.html">Resume</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>   
+            <img src="favicon.ico" alt="Blake Briol Logo"> <!-- Favicon Logo -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="resume.html">Resume</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </nav>
     </header>
     
     <div class="container">
-        <section class="hero">
-            <h2>Welcome to My Website</h2>
-            <p>Explore my past works, background, and get in touch!</p>
-        </section>
-
-        <section class="feature">
-            <div class="feature-card">
-                <h3>Past and Present Projects</h3>
-                <p>Learn about some of my past projects as well as some I am still working on</p>
-            </div>
-            <div class="feature-card">
-                <h3>Professional and Personal Experience</h3>
-                <p>Learn about my professional background and the roles I have taken on</p>
-            </div>
-            <div class="feature-card">
-                <h3>Get in Touch</h3>
-                <p>Find out how you can contact me for collaborations, inquiries, or just to send a greeting!</p>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section class="about-me">
-            <img src="HeadS.png" alt="Me!">
-            <h2>About Me</h2>
-            <p>
-               Beginning my academic career in classical music, transferring to philosophy, and then joining with mathematics, coupled with numerous hobbies and
-               interests, I find my greatest skills to be my adaptability in unique and challenging environments, my ability to excel and lead in said 
-                environments, and my organizational skills to ensure the aforementioned.
+        <section id="resume">
+            <h2>Resume</h2>
+            <p class="contact-info">
+                <a href="mailto:BlakeBriol@gmail.com">BlakeBriol@gmail.com</a> - <a href="https://linkedin.com/in/Blake-Briol" target="_blank">linkedin.com/in/Blake-Briol</a>
             </p>
+
+            <div class="resume-section">
+                <h3>Summary</h3>
+                <div class="resume-item">
+                    <p>Beginning my academic career in classical music, transferring to philosophy, and then joining with mathematics, coupled with numerous hobbies and interests, I find my greatest skills to be my adaptability in unique and challenging environments, my ability to excel and lead in said environments, and my organizational skills to ensure the aforementioned.</p>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Education</h3>
+                <div class="resume-item">
+                    <h4>University of Minnesota Twin Cities</h4>
+                    <p><strong>Major:</strong> Philosophy (Sept. 2022 - Present)<br>
+                    <strong>Minor:</strong> Mathematics<br>
+                    Bachelor of Arts - Anticipated Graduation Date: Spring 2026<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>GPA: 3.742 on a 4.0 Scale, Honors Program, Dean's List: Fall 2022, Spring 2023, Spring 2024</li>
+                        <li>Relevant Coursework: Human Physiology and Medical Devices (BIOL 1015), Honors Calculus III (MATH 2673H), Mathematical Logic I (MATH 5165), Principles of Microeconomics (APEC 1101), Starting a Startup (HSEM 3809H)</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Manhattan School of Music</h4>
+                    <p><strong>Field of Study:</strong> Classical Voice - Baritone (Aug. 2021 - May 2022)<br>
+                    Manhattan, NY</p>
+                    <ul>
+                        <li>GPA: 3.84 on a 4.0 Scale</li>
+                        <li>Relevant Coursework: English Diction, Italian Diction, Music Theory, Voice Lessons</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Publications</h4>
+                    <ul>
+                        <li>Briol, B. (2024). THE AXIOM OF CONSTRUCTIBILITY. EPISTEMAI, 12, 45-67.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Leadership Experience</h3>
+                <div class="resume-item">
+                    <h4>Philosophy Club, University of Minnesota, Twin Cities</h4>
+                    <p>Jan. 2022 – Present<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Vice President (2022-2023), Secretary (2022-2023)</li>
+                        <li>Developed a club filing system emphasizing club longevity and ease of use</li>
+                        <li>Created a club discord with artificial intelligence-based moderation, a structured role system, with 62 participants</li>
+                        <li>Assists in preparations for weekly administrative meetings and weekly events averaging 18 participants</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Epistemai, Philosophy Journal at University of Minnesota, Twin Cities</h4>
+                    <p>Oct. 2022 – Present<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Editor-in-Chief (2023-2024), Peer Reviewer and Editor (2022-2023)</li>
+                        <li>23 member team under the direction of Editor-in-Chief and President</li>
+                        <li>Reviews 30-40 academic philosophy papers for possible publication organized through member-accessible spreadsheets</li>
+                        <li>Guides 3-4 student authors through the editorial process providing insight and guidance</li>
+                        <li>Assists in running/runs weekly journal meetings including creation of spreadsheets and work delegation</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>German Club, University of Minnesota, Twin Cities</h4>
+                    <p>Oct. 2022 – Present<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>President (2023-2024), Secretary (2022-2023)</li>
+                        <li>Organizes weekly administrative meetings and monthly events averaging 20 participants</li>
+                        <li>Developed a club filing system emphasizing club longevity and ease of use</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h3>Work Experience</h3>
+                <div class="resume-item">
+                    <h4>Delivery Driver, Doordash</h4>
+                    <p>Nov. 2021 - March 2023<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>4.96/5 Consumer satisfaction score, 353 total deliveries, 4 Above and beyond customer distinctions</li>
+                        <li>Observed and measured trends of consumer demand in order to maximize profitable working hours</li>
+                        <li>Created an algorithm to automate order selection in order to efficiently maximize profits</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Legal Assistant, Briol and Benson, PLLC</h4>
+                    <p>June 2019 - Aug. 2022<br>
+                    Minneapolis, MN</p>
+                    <ul>
+                        <li>Improved organization and security for both paper and computerized files via creation of a file management system</li>
+                        <li>Cataloged and organized thousands of archived legal documents</li>
+                        <li>Found cost-effective solutions to large problems e.g., utilizing a specialized artificial intelligence software for deposition transcription that was more cost-effective than employee time</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-section interests">
+                <h3>Skills & Interests</h3>
+                <div class="resume-item">
+                    <h4>Skills</h4>
+                    <ul>
+                        <li><strong>Computer:</strong> Python (Intermediate), C (Beginner), LaTeX (Advanced), Google Drive, Microsoft Office, Music Composition Software, Zoom</li>
+                    </ul>
+                </div>
+                <div class="resume-item">
+                    <h4>Hobbies</h4>
+                    <ul>
+                        <li>Classical Piano</li>
+                        <li>Rock Climbing</li>
+                        <li>Powerlifting</li>
+                        <li>Chess</li>
+                        <li>Literature</li>
+                        <li>Sudoku</li>
+                        <li>Yoga</li>
+                        <li>Hiking</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </div>
 
