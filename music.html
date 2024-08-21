@@ -167,44 +167,31 @@
                 font-size: 1.5em;
             }
 
-            .logo-container img {
-                width: 40px;
-                height: 40px;
+            .logo-container {
+                margin-bottom: 1em;
             }
 
             nav {
                 flex-direction: column;
-                align-items: center;
+                gap: 10px;
             }
 
-            nav a {
-                margin: 10px 0;
-            }
-
-            .portfolio-item {
-                padding: 1em;
-            }
-
-            .pdf-viewer {
-                height: 400px;
+            .project-card {
+                padding: 1.5em;
             }
         }
 
         @media (max-width: 480px) {
-            .name {
+            .container {
+                padding: 1em;
+            }
+
+            .project-card {
+                padding: 1em;
+            }
+
+            h1, h2, h3 {
                 font-size: 1.2em;
-            }
-
-            .portfolio-item h4 {
-                font-size: 1.2em;
-            }
-
-            .portfolio-item p {
-                font-size: 0.9em;
-            }
-
-            .pdf-viewer {
-                height: 300px;
             }
         }
     </style>
